@@ -12,7 +12,7 @@ func Start() {
 	mux := mux.NewRouter()
 
 	//define routes
-	mux.HandleFunc("/greet", greet)
+	mux.HandleFunc("/greet", greet).Methods(http.MethodGet)
 	mux.HandleFunc("/customers", getAllCustomers)
 	mux.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer)
 
