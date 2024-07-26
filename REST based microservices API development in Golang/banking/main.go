@@ -7,7 +7,7 @@ import (
 )
 
 type Customer struct {
-	Name    string
+	Name    string `json:"full_name"`
 	City    string
 	Zipcode string
 }
