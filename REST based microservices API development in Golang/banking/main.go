@@ -6,8 +6,10 @@ import (
 )
 
 func main() {
+	//define routes
 	http.HandleFunc("/greet", greet)
 
+	//starting server
 	http.ListenAndServe("localhost:8000", nil)
 }
 
