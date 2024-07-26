@@ -8,8 +8,8 @@ import (
 
 type Customer struct {
 	Name    string `json:"full_name"`
-	City    string
-	Zipcode string
+	City    string `json:"city"`
+	Zipcode string `json:"zip_code"`
 }
 
 func main() {
