@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -20,5 +21,6 @@ func Start() {
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
-	mux.Vars(r)
+	vars := mux.Vars(r)
+	fmt.Fprint(w, vars["customer_id"])
 }
