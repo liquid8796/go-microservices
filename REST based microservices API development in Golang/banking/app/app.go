@@ -14,6 +14,7 @@ func Start() {
 	//define routes
 	mux.HandleFunc("/greet", greet).Methods(http.MethodGet)
 	mux.HandleFunc("/customers", getAllCustomers).Methods(http.MethodGet)
+	mux.HandleFunc("/customers", createCustomer).Methods(http.MethodPost)
 	mux.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer).Methods(http.MethodGet)
 
 	//starting server
@@ -21,6 +22,11 @@ func Start() {
 }
 
 func getCustomer(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	fmt.Fprint(w, vars["customer_id"])
+}
+
+func createCustomer(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	fmt.Fprint(w, vars["customer_id"])
 }
