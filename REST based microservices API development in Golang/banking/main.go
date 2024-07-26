@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 )
 
@@ -10,5 +11,5 @@ func main() {
 	http.HandleFunc("/customers", getAllCustomers)
 
 	//starting server
-	http.ListenAndServe("localhost:8000", nil)
+	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
