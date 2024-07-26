@@ -32,11 +32,10 @@ func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.Header.Get("Content-Type") == "application/xml" {
-
+		w.Header().Add("Content-Type", "application/xml")
+		xml.NewEncoder(w).Encode(customers)
 	}
 
-	w.Header().Add("Content-Type", "application/xml")
-
 	// json.NewEncoder(w).Encode(customers)
-	xml.NewEncoder(w).Encode(customers)
+
 }
