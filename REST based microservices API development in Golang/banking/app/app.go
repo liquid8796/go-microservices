@@ -14,7 +14,7 @@ func Start() {
 	//define routes
 	mux.HandleFunc("/greet", greet)
 	mux.HandleFunc("/customers", getAllCustomers)
-	mux.HandleFunc("/customers/{customer_id:[0-9]}", getCustomer)
+	mux.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomer)
 
 	//starting server
 	log.Fatal(http.ListenAndServe("localhost:8000", mux))
