@@ -9,7 +9,7 @@ func Start() {
 	mux := http.NewServeMux()
 
 	//define routes
-	http.HandleFunc("/greet", greet)
+	mux.HandleFunc("/greet", greet)
 	mux.HandleFunc("/customers", getAllCustomers)
 
 	//starting server
