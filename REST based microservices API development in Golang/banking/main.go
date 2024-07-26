@@ -1,9 +1,12 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
 	http.HandleFunc("/greet", func(w http.ResponseWriter, r *http.Request) {
-
+		fmt.Fprint()
 	})
 }
