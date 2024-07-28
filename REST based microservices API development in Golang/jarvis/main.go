@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"net/http"
 	"time"
 
@@ -28,4 +29,5 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Add("Content-Type", "application/xml")
+	json.NewEncoder(w).Encode(current_time)
 }
