@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"time"
 
@@ -12,6 +13,8 @@ func main() {
 	mux := mux.NewRouter()
 
 	mux.HandleFunc("/api/time", getTime).Methods(http.MethodGet)
+
+	log.Fatal(http.ListenAndServe("localhost:8080", mux))
 
 }
 
