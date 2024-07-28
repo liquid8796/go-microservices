@@ -28,7 +28,12 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("current_time=%s", current_time)
 		res["current_time"] = current_time
 	} else {
-		loc, _ := time.LoadLocation(tz)
+		loc, err := time.LoadLocation(tz)
+
+		if err == nil {
+			w.WriteHeader(http.StatusNotFound)
+		}
+
 		current_time = time.Now().In(loc).String()
 	}
 
