@@ -24,7 +24,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 	var current_time string
 
 	if tz == "" {
-		current_time = time.Now().UTC().String()
+		current_time = time.Now().String()
 		fmt.Printf("current_time=%s", current_time)
 		res["current_time"] = current_time
 	} else {
