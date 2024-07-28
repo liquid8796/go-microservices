@@ -32,6 +32,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 		if err == nil {
 			w.WriteHeader(http.StatusNotFound)
+			return
 		}
 
 		current_time = time.Now().In(loc).String()
