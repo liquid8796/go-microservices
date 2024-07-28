@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"time"
@@ -24,6 +25,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 	if tz == "" {
 		current_time = time.UTC.String()
+		fmt.Printf("current_time=%s", current_time)
 		res["current_time"] = current_time
 	} else {
 		loc, _ := time.LoadLocation(tz)
