@@ -15,7 +15,6 @@ func main() {
 	mux.HandleFunc("/api/time", getTime).Methods(http.MethodGet)
 
 	log.Fatal(http.ListenAndServe("localhost:8080", mux))
-
 }
 
 func getTime(w http.ResponseWriter, r *http.Request) {
