@@ -30,7 +30,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 	} else {
 		loc, err := time.LoadLocation(tz)
 
-		if err == nil {
+		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
 			fmt.Print("Location not found!")
 			return
