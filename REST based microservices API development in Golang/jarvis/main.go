@@ -28,9 +28,12 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 	res := map[string]string{}
 	var current_time string
 
-	if tz == "" {
-		current_time = time.Now().UTC().String()
-		res["current_time"] = current_time
+	if len(multiTz) == 1 {
+		if tz == "" {
+			current_time = time.Now().UTC().String()
+			res["current_time"] = current_time
+		}
+
 	} else if len(multiTz) == 1 {
 		loc, err := time.LoadLocation(tz)
 
