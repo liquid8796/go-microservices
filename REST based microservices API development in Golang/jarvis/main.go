@@ -45,5 +45,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	w.Header().Add("Content-Type", "application/xml")
-	json.NewEncoder(w).Encode(current_time)
+	data, _ := json.Marshal(res)
+	w.Write(data)
+	// json.NewEncoder(w).Encode(current_time)
 }
