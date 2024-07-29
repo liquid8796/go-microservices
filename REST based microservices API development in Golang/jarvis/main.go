@@ -30,7 +30,6 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 	if tz == "" {
 		current_time = time.Now().UTC().String()
-		fmt.Printf("current_time=%s", current_time)
 		res["current_time"] = current_time
 	} else {
 		loc, err := time.LoadLocation(tz)
