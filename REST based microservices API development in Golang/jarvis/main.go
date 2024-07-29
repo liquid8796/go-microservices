@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -20,6 +21,10 @@ func main() {
 
 func getTime(w http.ResponseWriter, r *http.Request) {
 	tz := r.URL.Query().Get("tz")
+	multiTz := strings.Split(tz, ",")
+
+	fmt.Println(len(multiTz))
+
 	res := map[string]string{}
 	var current_time string
 
