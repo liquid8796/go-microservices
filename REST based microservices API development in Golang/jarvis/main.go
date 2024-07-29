@@ -30,7 +30,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 	if tz == "" {
 		current_time = time.Now().UTC().String()
-		res["current_time"] = current_time
+
 	} else {
 		loc, err := time.LoadLocation(tz)
 
@@ -43,6 +43,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 		current_time = time.Now().In(loc).String()
 	}
 
+	res["current_time"] = current_time
 	data, _ := json.Marshal(res)
 
 	w.WriteHeader(http.StatusOK)
