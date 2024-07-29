@@ -44,7 +44,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 		res["current_time"] = current_time
 	} else if len(multiTz) > 1 {
 		for _, _tz := range multiTz {
-			loc, err := time.LoadLocation(tz)
+			loc, err := time.LoadLocation(_tz)
 
 			if err != nil {
 				w.WriteHeader(http.StatusNotFound)
