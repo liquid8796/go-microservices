@@ -47,6 +47,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 			loc, err := time.LoadLocation(_tz)
 
 			if err != nil {
+				w.Header().Set("Content-Type", "application/json")
 				w.WriteHeader(http.StatusNotFound)
 				fmt.Fprintf(w, "invalid timezone %s", _tz)
 				return
