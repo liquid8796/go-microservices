@@ -36,7 +36,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 		if err != nil {
 			w.WriteHeader(http.StatusNotFound)
-			fmt.Fprint(w, "Location not found!")
+			fmt.Fprint(w, "invalid timezone")
 			return
 		}
 
@@ -48,7 +48,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 			if err != nil {
 				w.WriteHeader(http.StatusNotFound)
-				fmt.Fprintf(w, "Location %s not found!", _tz)
+				fmt.Fprintf(w, "invalid timezone %s", _tz)
 				return
 			}
 
