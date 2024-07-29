@@ -46,6 +46,6 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 	data, _ := json.Marshal(res)
 
 	w.WriteHeader(http.StatusOK)
-	w.Header().Add("Content-Type", "application/xml")
+	w.Header().Add("Content-Type", "application/json")
 	w.Write(data)
 }
