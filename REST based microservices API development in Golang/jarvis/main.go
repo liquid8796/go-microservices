@@ -31,7 +31,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 	if tz == "" {
 		current_time = time.Now().UTC().String()
 
-	} else if len(multiTz) > 1 {
+	} else if len(multiTz) == 1 {
 		loc, err := time.LoadLocation(tz)
 
 		if err != nil {
