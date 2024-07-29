@@ -23,7 +23,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 	tz := r.URL.Query().Get("tz")
 	multiTz := strings.Split(tz, ",")
 
-	fmt.Printf("tz = %s, len = %d", tz, multiTz)
+	fmt.Printf("tz = %s, len = %d", tz, len(multiTz))
 
 	res := map[string]string{}
 	var current_time string
