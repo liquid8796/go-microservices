@@ -32,20 +32,20 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 		if tz == "" {
 			current_time = time.Now().UTC().String()
 			res["current_time"] = current_time
+		} else {
+			loc, err := time.LoadLocation(tz)
+
+			if err != nil {
+				w.Header().Set("Content-Type", "application/json")
+				w.WriteHeader(http.StatusNotFound)
+				fmt.Fprint(w, "invalid timezone")
+				return
+			}
+
+			current_time = time.Now().In(loc).String()
+			res["current_time"] = current_time
 		}
 
-	} else if len(multiTz) == 1 {
-		loc, err := time.LoadLocation(tz)
-
-		if err != nil {
-			w.Header().Set("Content-Type", "application/json")
-			w.WriteHeader(http.StatusNotFound)
-			fmt.Fprint(w, "invalid timezone")
-			return
-		}
-
-		current_time = time.Now().In(loc).String()
-		res["current_time"] = current_time
 	} else if len(multiTz) > 1 {
 		for _, _tz := range multiTz {
 			loc, err := time.LoadLocation(_tz)
