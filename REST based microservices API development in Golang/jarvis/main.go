@@ -30,7 +30,7 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 
 	if tz == "" {
 		current_time = time.Now().UTC().String()
-
+		res["current_time"] = current_time
 	} else if len(multiTz) == 1 {
 		loc, err := time.LoadLocation(tz)
 
@@ -41,9 +41,20 @@ func getTime(w http.ResponseWriter, r *http.Request) {
 		}
 
 		current_time = time.Now().In(loc).String()
-	}
+		res["current_time"] = current_time
+	} else if len(multiTz) > 1 {
+		for _, _tz := range multiTz {
+			loc, err := time.LoadLocation(tz)
 
-	res["current_time"] = current_time
+			if err != nil {
+				w.WriteHeader(http.StatusNotFound)
+				fmt.Fprint(w, "Location %s not found!", _tz)
+				return
+			}
+
+			res[_tz] = time.Now().In(loc).String()
+		}
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
