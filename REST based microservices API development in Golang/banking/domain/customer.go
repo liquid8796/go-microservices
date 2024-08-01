@@ -14,4 +14,5 @@ type CustomerRepository interface {
 }
 
 type CustomerRepositoryStub struct {
+	customers []Customer
 }
