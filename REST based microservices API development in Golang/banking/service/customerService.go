@@ -11,7 +11,7 @@ type DefaultCustomerService struct {
 }
 
 func (s DefaultCustomerService) GetAllCustomer() ([]domain.Customer, error) {
-	return []domain.Customer{}, nil
+	return s.repo.FindAll()
 }
 
 func NewCustomerService(repository domain.CustomerRepository) DefaultCustomerService {
