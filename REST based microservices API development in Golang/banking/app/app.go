@@ -13,6 +13,7 @@ func Start() {
 	mux := mux.NewRouter()
 
 	//wiring
+	// ch := CustomerHandlers{service.NewCustomerService(domain.NewCustomerRepositoryStub())}
 	ch := CustomerHandlers{service.NewCustomerService(domain.NewCustomerRepositoryStub())}
 
 	//define routes
