@@ -38,6 +38,21 @@ func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Reque
 
 }
 
+func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["customer_id"]
+
+	customer, err := ch.service.GetCustomer(id)
+
+	if err != nil {
+		w.WriteHeader(http.StatusNotFound)
+		fmt.Fprintf(w, err.Error())
+	} else {
+		w.Header().Add("Content-Type", "application/xml")
+		xml.NewEncoder(w).Encode(customer)
+	}
+}
+
 func getCustomer(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	fmt.Fprint(w, vars["customer_id"])
