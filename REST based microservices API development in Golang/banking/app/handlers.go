@@ -48,7 +48,7 @@ func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) 
 		w.WriteHeader(http.StatusNotFound)
 		fmt.Fprintf(w, err.Error())
 	} else {
-		w.Header().Add("Content-Type", "application/xml")
+		w.Header().Add("Content-Type", "application/json")
 		xml.NewEncoder(w).Encode(customer)
 	}
 }
