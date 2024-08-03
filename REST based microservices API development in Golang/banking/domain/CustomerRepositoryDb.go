@@ -48,6 +48,7 @@ func (d CustomerRepositoryDb) ById(id string) (*Customer, error) {
 			return nil, errors.New("Customer not found")
 		} else {
 			log.Println("Error while scanning customer " + err.Error())
+			return nil, err
 		}
 		log.Println("Error while scanning customer " + err.Error())
 		return nil, err
