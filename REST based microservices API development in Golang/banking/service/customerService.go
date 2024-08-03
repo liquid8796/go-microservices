@@ -4,6 +4,7 @@ import "banking/domain"
 
 type CustomerService interface {
 	GetAllCustomer() ([]domain.Customer, error)
+	GetCustomer(string) (*domain.Customer, error)
 }
 
 type DefaultCustomerService struct {
