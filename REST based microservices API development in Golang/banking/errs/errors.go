@@ -13,3 +13,10 @@ func NewNotFoundError(message string) *AppError {
 		Code:    http.StatusNotFound,
 	}
 }
+
+func NewUnexpectedError(message string) *AppError {
+	return &AppError{
+		Message: message,
+		Code:    http.StatusInternalServerError,
+	}
+}
