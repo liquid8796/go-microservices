@@ -19,7 +19,7 @@ func (d CustomerRepositoryDb) FindAll() ([]Customer, *errs.AppError) {
 
 	rows, err := d.client.Query(findAllSql)
 	if err != nil {
-		return nil, errs.NewNotFoundError("Unexpected database error")
+		return nil, errs.NewUnexpectedError("Unexpected database error")
 	}
 
 	customers := make([]Customer, 0)
@@ -28,8 +28,7 @@ func (d CustomerRepositoryDb) FindAll() ([]Customer, *errs.AppError) {
 		err := rows.Scan(&c.Id, &c.Name, &c.City, &c.Zipcode, &c.DateOfBirth, &c.Status)
 
 		if err != nil {
-			log.Println("Error while querying customer table " + err.Error())
-			return nil, errs.NewNotFoundError("Unexpected database error")
+			return nil, errs.NewUnexpectedError("Error while scanning customer")
 		}
 		customers = append(customers, c)
 	}
