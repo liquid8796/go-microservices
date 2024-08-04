@@ -48,6 +48,8 @@ func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) 
 		w.WriteHeader(err.Code)
 		// fmt.Fprintf(w, err.Message)
 		json.NewEncoder(w).Encode(err.AsMessage())
+
+		writeResponse(w, err.Code, err.AsMessage())
 	} else {
 		writeResponse(w, http.StatusOK, customer)
 	}
