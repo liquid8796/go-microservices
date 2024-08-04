@@ -55,6 +55,6 @@ func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) 
 	}
 }
 
-func writeResponse(w http.ResponseWriter, r *http.Request, data interface{}) {
+func writeResponse(w http.ResponseWriter, code int, data interface{}) {
 
 }
