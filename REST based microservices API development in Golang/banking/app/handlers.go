@@ -48,7 +48,7 @@ func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) 
 		w.Header().Add("Content-Type", "application/json")
 		w.WriteHeader(err.Code)
 		// fmt.Fprintf(w, err.Message)
-		json.NewEncoder(w).Encode(err)
+		json.NewEncoder(w).Encode(err.AsMessage())
 	} else {
 		w.Header().Add("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(customer)
