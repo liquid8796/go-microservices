@@ -50,9 +50,6 @@ func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) 
 		json.NewEncoder(w).Encode(err.AsMessage())
 	} else {
 		writeResponse(w, http.StatusOK, customer)
-		w.Header().Add("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOK)
-		json.NewEncoder(w).Encode(customer)
 	}
 }
 
