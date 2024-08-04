@@ -54,3 +54,5 @@ func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) 
 		json.NewEncoder(w).Encode(customer)
 	}
 }
+
+func writeResponse(w http.ResponseWriter, r *http.Request)
