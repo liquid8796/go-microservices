@@ -21,6 +21,8 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 		status = "1"
 	} else if status == "inactive" {
 		status = "0"
+	} else {
+		status = ""
 	}
 
 	fmt.Printf("Status = %s\n", status)
