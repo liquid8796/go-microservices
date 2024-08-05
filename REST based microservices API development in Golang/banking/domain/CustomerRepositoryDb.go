@@ -14,7 +14,6 @@ type CustomerRepositoryDb struct {
 }
 
 func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError) {
-
 	findAllSql := "select customer_id, name, city, zipcode, date_of_birth, status from customers where status = ?"
 
 	rows, err := d.client.Query(findAllSql)
