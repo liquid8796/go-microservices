@@ -15,7 +15,7 @@ type CustomerRepositoryDb struct {
 }
 
 func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError) {
-	findAllSql := "select customer_id, name, city, zipcode, date_of_birth, status from customers where status like '?'"
+	findAllSql := "select customer_id, name, city, zipcode, date_of_birth, status from customers where status like ?"
 
 	if status == "active" {
 		status = "1"
