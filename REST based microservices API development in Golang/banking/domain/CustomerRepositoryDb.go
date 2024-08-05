@@ -3,7 +3,6 @@ package domain
 import (
 	"banking/errs"
 	"database/sql"
-	"fmt"
 	"log"
 	"time"
 
@@ -24,8 +23,6 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 	} else {
 		status = ""
 	}
-
-	fmt.Printf("Status = %s\n", status)
 
 	rows, err := d.client.Query(findAllSql, "%"+status+"%")
 	if err != nil {
