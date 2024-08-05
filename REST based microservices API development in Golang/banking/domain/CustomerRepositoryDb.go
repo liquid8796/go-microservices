@@ -23,7 +23,7 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 		status = "0"
 	}
 
-	fmt.Printf("Status = %s", status)
+	fmt.Printf("Status = %s\n", status)
 
 	rows, err := d.client.Query(findAllSql, status)
 	if err != nil {
