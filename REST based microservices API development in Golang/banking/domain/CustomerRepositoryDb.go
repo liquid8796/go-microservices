@@ -16,13 +16,13 @@ type CustomerRepositoryDb struct {
 func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError) {
 	findAllSql := "select customer_id, name, city, zipcode, date_of_birth, status from customers where status = ?"
 
-	param := 0
-
 	if status == "active" {
-		param = 1
+		status = "1"
+	} else if status == "inactive" {
+		status = "0"
 	}
 
-	rows, err := d.client.Query(findAllSql, param)
+	rows, err := d.client.Query(findAllSql, status)
 	if err != nil {
 		return nil, errs.NewUnexpectedError("Unexpected database error")
 	}
