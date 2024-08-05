@@ -22,12 +22,12 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 	} else if status == "inactive" {
 		status = "0"
 	} else {
-		status = nil
+		status = ""
 	}
 
 	fmt.Printf("Status = %s\n", status)
 
-	rows, err := d.client.Query(findAllSql, status)
+	rows, err := d.client.Query(findAllSql, "")
 	if err != nil {
 		return nil, errs.NewUnexpectedError("Unexpected database error")
 	}
