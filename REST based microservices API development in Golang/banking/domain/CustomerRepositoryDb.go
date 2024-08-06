@@ -25,19 +25,22 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 		status = ""
 	}
 
-	rows, err := d.client.Query(findAllSql, "%"+status+"%")
+	var err error
+	customers := make([]Customer, 0)
+
+	// rows, err := d.client.Query(findAllSql, "%"+status+"%")
+	err = d.client.Select(&customers, findAllSql, "%"+status+"%")
+
 	if err != nil {
 		logger.Error("Unexpected database error")
 		return nil, errs.NewUnexpectedError("Unexpected database error")
 	}
 
-	customers := make([]Customer, 0)
-	err = sqlx.StructScan(rows, &customers)
-
-	if err != nil {
-		logger.Error("Error while scanning customer")
-		return nil, errs.NewUnexpectedError("Error while scanning customer")
-	}
+	// err = sqlx.StructScan(rows, &customers)
+	// if err != nil {
+	// 	logger.Error("Error while scanning customer")
+	// 	return nil, errs.NewUnexpectedError("Error while scanning customer")
+	// }
 
 	// for rows.Next() {
 	// 	var c Customer
