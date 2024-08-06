@@ -34,6 +34,11 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 	customers := make([]Customer, 0)
 	err = sqlx.StructScan(rows, &customers)
 
+	if err != nil {
+		logger.Error("Error while scanning customer")
+		return nil, errs.NewUnexpectedError("Error while scanning customer")
+	}
+
 	for rows.Next() {
 		var c Customer
 		err := rows.Scan(&c.Id, &c.Name, &c.City, &c.Zipcode, &c.DateOfBirth, &c.Status)
