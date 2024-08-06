@@ -1,10 +1,10 @@
 package dto
 
 type CustomerResponse struct {
-	Id          string `db:"customer_id"`
+	Id          string
 	Name        string
 	City        string
 	Zipcode     string
-	DateOfBirth string `db:"date_of_birth"`
+	DateOfBirth string
 	Status      string
 }
