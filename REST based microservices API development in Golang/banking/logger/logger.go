@@ -11,7 +11,7 @@ var log *zap.Logger
 func init() {
 	var err error
 
-	log, err = zap.NewProduction(zap.AddCallerSkip(2))
+	log, err = zap.NewProduction(zap.AddCallerSkip(3))
 	if err != nil {
 		panic(err)
 	}
