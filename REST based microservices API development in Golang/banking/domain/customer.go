@@ -14,6 +14,10 @@ type Customer struct {
 	Status      string
 }
 
+func (c Customer) name() {
+
+}
+
 func (c Customer) ToDto() dto.CustomerResponse {
 	statusAsText := "active"
 	if c.Status == "0" {
