@@ -19,7 +19,9 @@ func init() {
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 	config.EncoderConfig = encoderConfig
 
-	log, err = zap.NewProduction(zap.AddCallerSkip(1))
+	log, err = config.Build()
+
+	// log, err = zap.NewProduction(zap.AddCallerSkip(1))
 	if err != nil {
 		panic(err)
 	}
