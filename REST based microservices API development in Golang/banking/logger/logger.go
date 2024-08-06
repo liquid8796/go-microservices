@@ -12,3 +12,5 @@ func init() {
 		panic(err)
 	}
 }
+
+func Info(message string, fields ...zap.Field)
