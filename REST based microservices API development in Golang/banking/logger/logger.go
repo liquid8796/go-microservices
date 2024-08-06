@@ -18,7 +18,7 @@ func init() {
 	encoderConfig.StacktraceKey = ""
 	config.EncoderConfig = encoderConfig
 
-	log, err = config.Build()
+	log, err = config.Build(zap.AddCallerSkip(1))
 
 	// log, err = zap.NewProduction(zap.AddCallerSkip(1))
 	if err != nil {
