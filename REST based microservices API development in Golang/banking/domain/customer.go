@@ -3,7 +3,7 @@ package domain
 import "banking/errs"
 
 type Customer struct {
-	Id          string
+	Id          string `db:"customer_id"`
 	Name        string
 	City        string
 	Zipcode     string
