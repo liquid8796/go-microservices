@@ -26,6 +26,7 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 
 	rows, err := d.client.Query(findAllSql, "%"+status+"%")
 	if err != nil {
+		logger.Error("Unexpected database error")
 		return nil, errs.NewUnexpectedError("Unexpected database error")
 	}
 
