@@ -2,6 +2,7 @@ package service
 
 import (
 	"banking/domain"
+	"banking/dto"
 	"banking/errs"
 )
 
@@ -18,8 +19,21 @@ func (s DefaultCustomerService) GetAllCustomer(status string) ([]domain.Customer
 	return s.repo.FindAll(status)
 }
 
-func (s DefaultCustomerService) GetCustomer(id string) (*domain.Customer, *errs.AppError) {
-	return s.repo.ById(id)
+func (s DefaultCustomerService) GetCustomer(id string) (*dto.CustomerResponse, *errs.AppError) {
+	c, err := s.repo.ById(id)
+	if err != nil {
+		return nil, err
+	}
+	response := dto.CustomerResponse{
+		Id:          c.Id,
+		Name:        c.Name,
+		City:        c.City,
+		Zipcode:     c.Zipcode,
+		DateOfBirth: c.DateOfBirth,
+		Status:      c.Status,
+	}
+
+	return &response, nil
 }
 
 func NewCustomerService(repository domain.CustomerRepository) DefaultCustomerService {
