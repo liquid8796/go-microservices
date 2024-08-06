@@ -39,16 +39,16 @@ func (d CustomerRepositoryDb) FindAll(status string) ([]Customer, *errs.AppError
 		return nil, errs.NewUnexpectedError("Error while scanning customer")
 	}
 
-	for rows.Next() {
-		var c Customer
-		err := rows.Scan(&c.Id, &c.Name, &c.City, &c.Zipcode, &c.DateOfBirth, &c.Status)
+	// for rows.Next() {
+	// 	var c Customer
+	// 	err := rows.Scan(&c.Id, &c.Name, &c.City, &c.Zipcode, &c.DateOfBirth, &c.Status)
 
-		if err != nil {
-			logger.Error("Error while scanning customer")
-			return nil, errs.NewUnexpectedError("Error while scanning customer")
-		}
-		customers = append(customers, c)
-	}
+	// 	if err != nil {
+	// 		logger.Error("Error while scanning customer")
+	// 		return nil, errs.NewUnexpectedError("Error while scanning customer")
+	// 	}
+	// 	customers = append(customers, c)
+	// }
 	return customers, nil
 }
 
