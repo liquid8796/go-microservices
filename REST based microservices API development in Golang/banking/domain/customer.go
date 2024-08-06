@@ -7,7 +7,7 @@ type Customer struct {
 	Name        string
 	City        string
 	Zipcode     string
-	DateOfBirth string
+	DateOfBirth string `db:"date_of_birth"`
 	Status      string
 }
 
