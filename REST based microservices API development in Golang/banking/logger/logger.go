@@ -1,6 +1,10 @@
 package logger
 
-import "go.uber.org/zap"
+import (
+	"fmt"
+
+	"go.uber.org/zap"
+)
 
 var log *zap.Logger
 
@@ -14,5 +18,6 @@ func init() {
 }
 
 func Info(message string, fields ...zap.Field) {
+	fmt.Println(fields)
 	log.Info(message, fields...)
 }
