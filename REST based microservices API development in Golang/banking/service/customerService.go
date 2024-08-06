@@ -24,14 +24,7 @@ func (s DefaultCustomerService) GetCustomer(id string) (*dto.CustomerResponse, *
 	if err != nil {
 		return nil, err
 	}
-	response := dto.CustomerResponse{
-		Id:          c.Id,
-		Name:        c.Name,
-		City:        c.City,
-		Zipcode:     c.Zipcode,
-		DateOfBirth: c.DateOfBirth,
-		Status:      c.Status,
-	}
+	response := c.ToDto()
 
 	return &response, nil
 }
