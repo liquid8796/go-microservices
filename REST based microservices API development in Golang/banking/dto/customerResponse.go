@@ -3,8 +3,8 @@ package dto
 type CustomerResponse struct {
 	Id          string `json:"customer_id"`
 	Name        string `json:"full_name"`
-	City        string
-	Zipcode     string
-	DateOfBirth string
+	City        string `json:"city"`
+	Zipcode     string `json:"zipcode"`
+	DateOfBirth string `json:"customer_id"`
 	Status      string
 }
