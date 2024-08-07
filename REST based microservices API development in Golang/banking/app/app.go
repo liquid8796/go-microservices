@@ -13,11 +13,7 @@ import (
 )
 
 func Start() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
+	loadEnv()
 	mux := mux.NewRouter()
 
 	//wiring
@@ -32,4 +28,11 @@ func Start() {
 	address := os.Getenv("SERVER_ADDRESS")
 	port := os.Getenv("SERVER_PORT")
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", address, port), mux))
+}
+
+func loadEnv() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 }
