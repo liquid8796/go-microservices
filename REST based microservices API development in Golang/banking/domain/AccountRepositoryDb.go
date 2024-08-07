@@ -32,5 +32,5 @@ func (d AccountRepositoryDb) Save(a Account) (*Account, *errs.AppError) {
 }
 
 func NewAccountRepositoryDb(dbClient *sqlx.DB) AccountRepositoryDb {
-
+	return AccountRepositoryDb{}
 }
