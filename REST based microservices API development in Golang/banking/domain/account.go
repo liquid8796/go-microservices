@@ -1,5 +1,7 @@
 package domain
 
+import "banking/errs"
+
 type Account struct {
 	AccountId   string
 	CustomerId  string
@@ -10,5 +12,5 @@ type Account struct {
 }
 
 type AccountRepository interface {
-	Save()
+	Save(Account) (*Account, *errs.AppError)
 }
