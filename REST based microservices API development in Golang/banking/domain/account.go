@@ -10,4 +10,5 @@ type Account struct {
 }
 
 type AccountRepository interface {
+	Save()
 }
