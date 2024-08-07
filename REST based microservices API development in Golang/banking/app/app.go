@@ -14,6 +14,7 @@ import (
 
 func Start() {
 	loadEnv()
+	sanityCheck()
 	mux := mux.NewRouter()
 
 	//wiring
