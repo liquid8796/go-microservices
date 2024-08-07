@@ -30,6 +30,10 @@ func Start() {
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", address, port), mux))
 }
 
+func sanityCheck() {
+
+}
+
 func loadEnv() {
 	err := godotenv.Load()
 	if err != nil {
