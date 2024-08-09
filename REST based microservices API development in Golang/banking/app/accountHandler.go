@@ -16,5 +16,7 @@ func (h AccountHandler) NewAccount(w http.ResponseWriter, r *http.Request) {
 	err := json.NewDecoder(r.Body).Decode(&request)
 	if err != nil {
 		writeResponse(w, http.StatusBadRequest, err.Error())
+	} else {
+		h.service.NewAccount(request)
 	}
 }
