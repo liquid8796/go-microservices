@@ -13,7 +13,7 @@ func (r NewAccountRequest) Validate() *errs.AppError {
 		return errs.NewValidationError("To open a new account you need to deposit atleast 5000.00")
 	}
 	if r.AccountType != "saving" && r.AccountType != "checking" {
-
+		return errs.NewValidationError("Account type should be checking or saving")
 	}
 	return nil
 }
