@@ -29,6 +29,7 @@ func Start() {
 	//define routes
 	mux.HandleFunc("/customers", ch.getAllCustomers).Methods(http.MethodGet)
 	mux.HandleFunc("/customers/{customer_id:[0-9]+}", ch.getCustomer).Methods(http.MethodGet)
+	mux.HandleFunc("/customers/{customer_id:[0-9]+}/account", ch.getCustomer).Methods(http.MethodGet)
 
 	//starting server
 	address := os.Getenv("SERVER_ADDRESS")
