@@ -32,3 +32,13 @@ func (a Account) CanWithdraw(amount float64) bool {
 	}
 	return true
 }
+
+func NewAccount(customerId, accountType string, amount float64) Account {
+	return Account{
+		CustomerId:  customerId,
+		OpeningDate: dbTSLayout,
+		AccountType: accountType,
+		Amount:      amount,
+		Status:      "1",
+	}
+}
