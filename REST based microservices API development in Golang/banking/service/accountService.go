@@ -1,5 +1,10 @@
 package service
 
+import (
+	"banking/dto"
+	"banking/errs"
+)
+
 type AccountService interface {
-	NewAccount()
+	NewAccount(dto.NewAccountRequest) (*dto.NewAccountResponse, *errs.AppError)
 }
