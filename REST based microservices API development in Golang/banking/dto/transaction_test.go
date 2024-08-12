@@ -33,7 +33,7 @@ func Test_should_return_error_when_amount_is_less_than_zero(t *testing.T) {
 
 	// Assert
 	if appError.Message != "Amount cannot be less than zero" {
-		t.Error("Invalid message while testing transaction type")
+		t.Error("Invalid message while validating amount")
 	}
 
 	if appError.Code != http.StatusUnprocessableEntity {
