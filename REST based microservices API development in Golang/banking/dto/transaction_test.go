@@ -37,6 +37,6 @@ func Test_should_return_error_when_amount_is_less_than_zero(t *testing.T) {
 	}
 
 	if appError.Code != http.StatusUnprocessableEntity {
-		t.Error("Invalid code while testing transaction type")
+		t.Error("Invalid code while testing amount")
 	}
 }
