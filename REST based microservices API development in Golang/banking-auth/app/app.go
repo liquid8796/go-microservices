@@ -1,17 +1,18 @@
 package app
 
 import (
+	"banking-auth/domain"
+	"banking-auth/service"
 	"fmt"
-	"github.com/ashishjuyal/banking-auth/domain"
-	"github.com/ashishjuyal/banking-auth/service"
-	"github.com/ashishjuyal/banking-lib/logger"
-	_ "github.com/go-sql-driver/mysql"
-	"github.com/gorilla/mux"
-	"github.com/jmoiron/sqlx"
 	"log"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/ashishjuyal/banking-lib/logger"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/gorilla/mux"
+	"github.com/jmoiron/sqlx"
 )
 
 func Start() {
