@@ -42,13 +42,9 @@ func Start() {
 		Methods(http.MethodPost).
 		Name("NewTransaction")
 
-	router.Use(func(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			// before
-			next.ServeHTTP(w, r)
-			// after
-		})
-	})
+	am := AuthMiddleware{domain.NewAuthRepository()}
+
+	router.Use(am.authorizationHandler())
 
 	//starting server
 	address := os.Getenv("SERVER_ADDRESS")
