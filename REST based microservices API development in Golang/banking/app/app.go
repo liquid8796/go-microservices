@@ -35,11 +35,6 @@ func Start() {
 
 	router.Use(func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-
-			currentRouteVars := mux.Vars(r)
-
-			fmt.Println(currentRouteVars)
-
 			// before
 			next.ServeHTTP(w, r)
 			// after
