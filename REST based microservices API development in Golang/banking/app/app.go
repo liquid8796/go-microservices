@@ -38,7 +38,7 @@ func Start() {
 			currentRoute := mux.CurrentRoute(r)
 			// currentRouteVars := mux.Vars(r)
 
-			fmt.Println(currentRoute)
+			fmt.Println(currentRoute.GetName())
 
 			// before
 			next.ServeHTTP(w, r)
