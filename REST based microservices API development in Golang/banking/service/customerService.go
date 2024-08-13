@@ -4,8 +4,6 @@ import (
 	"banking/domain"
 	"banking/dto"
 	"banking/errs"
-
-	_ "github.com/golang/mock/mockgen/model"
 )
 
 //go:generate mockgen -destination=../mocks/service/mockCustomerService.go -package=service banking/service CustomerService
