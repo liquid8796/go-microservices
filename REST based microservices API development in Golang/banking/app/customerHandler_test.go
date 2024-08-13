@@ -28,5 +28,11 @@ func Test_should_return_customers_with_status_code_200(t *testing.T) {
 	request, _ := http.NewRequest(http.MethodGet, "/customers", nil)
 
 	// Act
-	recorded := httptest.NewRecorder()
+	recorder := httptest.NewRecorder()
+	router.ServeHTTP(recorder, request)
+
+	// Assert
+	if recorder.Code != http.StatusOK {
+		t.Error("Failed while testing")
+	}
 }
