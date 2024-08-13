@@ -61,7 +61,8 @@ func Test_should_return_customers_with_status_code_200(t *testing.T) {
 
 func Test_should_return_status_code_500_with_error_message(t *testing.T) {
 	// Arrange
-	setup(t)
+	teardown := setup(t)
+	defer teardown()
 
 	// ctrl := gomock.NewController(t)
 	// mockService := service.NewMockCustomerService(ctrl)
