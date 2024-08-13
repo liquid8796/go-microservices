@@ -15,6 +15,7 @@ import (
 func Test_should_return_customers_with_status_code_200(t *testing.T) {
 	// Arrange
 	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
 	mockService := service.NewMockCustomerService(ctrl)
 	dummyCustomers := []dto.CustomerResponse{
 		{Id: "1001", Name: "Nam", City: "Thu Dau Mot", Zipcode: "70000", DateOfBirth: "1996-07-08", Status: "1"},
