@@ -33,7 +33,7 @@ func setup(t *testing.T) func() {
 func Test_should_return_customers_with_status_code_200(t *testing.T) {
 	// Arrange
 	teardown := setup(t)
-	defer teardown()
+	teardown()
 
 	// ctrl := gomock.NewController(t)
 	// mockService := service.NewMockCustomerService(ctrl)
