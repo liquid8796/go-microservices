@@ -28,6 +28,7 @@ func setup(t *testing.T) {
 func Test_should_return_customers_with_status_code_200(t *testing.T) {
 	// Arrange
 	setup(t)
+
 	// ctrl := gomock.NewController(t)
 	// mockService := service.NewMockCustomerService(ctrl)
 	dummyCustomers := []domain.Customer{
@@ -54,8 +55,10 @@ func Test_should_return_customers_with_status_code_200(t *testing.T) {
 
 func Test_should_return_status_code_500_with_error_message(t *testing.T) {
 	// Arrange
-	ctrl := gomock.NewController(t)
-	mockService := service.NewMockCustomerService(ctrl)
+	setup(t)
+
+	// ctrl := gomock.NewController(t)
+	// mockService := service.NewMockCustomerService(ctrl)
 	mockService.EXPECT().GetAllCustomer("").Return(nil, errs.NewUnexpectedError("some database errors"))
 	// ch := CustomerHandlers{mockService}
 
