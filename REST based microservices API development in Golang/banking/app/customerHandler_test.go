@@ -4,6 +4,7 @@ import (
 	"banking/dto"
 	"banking/mocks/service"
 	"net/http"
+	"net/http/httptest"
 	"testing"
 
 	"github.com/golang/mock/gomock"
@@ -24,6 +25,8 @@ func Test_should_return_customers_with_status_code_200(t *testing.T) {
 	router := mux.NewRouter()
 	router.HandleFunc("/customers", ch.getAllCustomers)
 
-	http.NewRequest(http.MethodGet, "/customers", nil)
+	request, _ := http.NewRequest(http.MethodGet, "/customers", nil)
 
+	// Act
+	recorded := httptest.NewRecorder()
 }
