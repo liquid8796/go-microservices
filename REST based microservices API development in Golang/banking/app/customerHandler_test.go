@@ -2,6 +2,7 @@ package app
 
 import (
 	"banking/dto"
+	"banking/errs"
 	"banking/mocks/service"
 	"net/http"
 	"net/http/httptest"
@@ -33,6 +34,28 @@ func Test_should_return_customers_with_status_code_200(t *testing.T) {
 
 	// Assert
 	if recorder.Code != http.StatusOK {
-		t.Error("Failed while testing")
+		t.Error("Failed while testing the status code")
+	}
+}
+
+func Test_should_return_status_code_500_with_error_message(t *testing.T) {
+	// Arrange
+	ctrl := gomock.NewController(t)
+	mockService := service.NewMockCustomerService(ctrl)
+	mockService.EXPECT().GetAllCustomer("").Return(nil, errs.NewUnexpectedError("some database errors"))
+	ch := CustomerHandlers{mockService}
+
+	router := mux.NewRouter()
+	router.HandleFunc("/customers", ch.getAllCustomers)
+
+	request, _ := http.NewRequest(http.MethodGet, "/customers", nil)
+
+	// Act
+	recorder := httptest.NewRecorder()
+	router.ServeHTTP(recorder, request)
+
+	// Assert
+	if recorder.Code != http.StatusInternalServerError {
+		t.Error("Failed while testing the status code")
 	}
 }
