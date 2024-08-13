@@ -12,10 +12,23 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func Test_should_return_customers_with_status_code_200(t *testing.T) {
-	// Arrange
+var router *mux.Router
+var ch CustomerHandlers
+var mockService *service.MockCustomerService
+
+func setup(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	mockService := service.NewMockCustomerService(ctrl)
+	ch := CustomerHandlers{mockService}
+
+	router := mux.NewRouter()
+}
+
+func Test_should_return_customers_with_status_code_200(t *testing.T) {
+	// Arrange
+	setup(t)
+	// ctrl := gomock.NewController(t)
+	// mockService := service.NewMockCustomerService(ctrl)
 	dummyCustomers := []domain.Customer{
 		{Id: "1001", Name: "Nam", City: "Thu Dau Mot", Zipcode: "70000", DateOfBirth: "1996-07-08", Status: "1"},
 		{Id: "1002", Name: "Hung", City: "Ho Chi Minh", Zipcode: "100000", DateOfBirth: "1997-01-01", Status: "1"},
