@@ -23,7 +23,6 @@ func setup(t *testing.T) {
 
 	router = mux.NewRouter()
 	router.HandleFunc("/customers", ch.getAllCustomers)
-
 }
 
 func Test_should_return_customers_with_status_code_200(t *testing.T) {
