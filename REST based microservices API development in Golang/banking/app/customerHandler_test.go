@@ -18,7 +18,7 @@ var mockService *service.MockCustomerService
 
 func setup(t *testing.T) func() {
 	ctrl := gomock.NewController(t)
-	mockService := service.NewMockCustomerService(ctrl)
+	mockService = service.NewMockCustomerService(ctrl)
 	ch = CustomerHandlers{mockService}
 
 	router = mux.NewRouter()
