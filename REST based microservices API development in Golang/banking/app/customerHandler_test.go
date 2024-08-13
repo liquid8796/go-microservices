@@ -57,10 +57,10 @@ func Test_should_return_status_code_500_with_error_message(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	mockService := service.NewMockCustomerService(ctrl)
 	mockService.EXPECT().GetAllCustomer("").Return(nil, errs.NewUnexpectedError("some database errors"))
-	ch := CustomerHandlers{mockService}
+	// ch := CustomerHandlers{mockService}
 
-	router := mux.NewRouter()
-	router.HandleFunc("/customers", ch.getAllCustomers)
+	// router := mux.NewRouter()
+	// router.HandleFunc("/customers", ch.getAllCustomers)
 
 	request, _ := http.NewRequest(http.MethodGet, "/customers", nil)
 
