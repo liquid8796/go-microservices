@@ -22,6 +22,7 @@ func setup(t *testing.T) {
 	ch = CustomerHandlers{mockService}
 
 	router = mux.NewRouter()
+	router.HandleFunc("/customers", ch.getAllCustomers)
 }
 
 func Test_should_return_customers_with_status_code_200(t *testing.T) {
@@ -37,7 +38,7 @@ func Test_should_return_customers_with_status_code_200(t *testing.T) {
 	// ch := CustomerHandlers{mockService}
 
 	// router := mux.NewRouter()
-	router.HandleFunc("/customers", ch.getAllCustomers)
+	// router.HandleFunc("/customers", ch.getAllCustomers)
 
 	request, _ := http.NewRequest(http.MethodGet, "/customers", nil)
 
