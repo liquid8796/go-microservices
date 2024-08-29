@@ -16,7 +16,6 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-Working with Microservices in Go (Golang)/project/db-data
 
 # Go workspace file
 go.work
