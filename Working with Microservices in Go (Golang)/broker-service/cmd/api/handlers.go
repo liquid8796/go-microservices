@@ -70,4 +70,11 @@ func (app *Config) authenticate(w http.ResponseWriter, a AuthPayload) {
 		app.errorJSON(w, errors.New("error calling auth service"))
 		return
 	}
+
+	// create a variable we'll read response.Body into
+	var jsonFromService jsonResponse
+
+	// decode the json from the auth service
+	err = json.NewDecoder(response.Body).Decode(jsonFromService)
+
 }
