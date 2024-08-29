@@ -18,6 +18,8 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	fmt.Printf(">>>>>>> authenticating: %+v", requestPayload)
+
 	// validate the user against the database
 	user, err := app.Models.User.GetByEmail(requestPayload.Email)
 	if err != nil {
