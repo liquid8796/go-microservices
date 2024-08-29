@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"net/http"
 )
 
@@ -30,5 +31,12 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.errorJSON(w, err)
 		return
+	}
+
+	switch requestPayload.Action {
+	case "auth":
+
+	default:
+		app.errorJSON(w, errors.New(""))
 	}
 }
