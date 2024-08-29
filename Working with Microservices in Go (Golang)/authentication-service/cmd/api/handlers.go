@@ -7,6 +7,7 @@ import (
 )
 
 func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(">>>>>>> Authenticating")
 	var requestPayload struct {
 		Email    string `json:"email"`
 		Password string `json:"password"`
