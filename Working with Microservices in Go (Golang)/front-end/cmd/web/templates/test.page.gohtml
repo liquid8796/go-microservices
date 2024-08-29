@@ -50,7 +50,7 @@
         }
 
         const headers = new Headers();
-        headers.
+        headers.append("Content-Type", "application/json");
 
         fetch("http:\/\/localhost:8080", body)
         .then((response) => response.json())
