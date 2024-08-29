@@ -42,7 +42,10 @@
     authBrokerBtn.addEventListener("click", function() {
 
         const payload = {
-            method: 'POST',
+            action: "auth",
+            auth: {
+                email: "
+            {
         }
 
         fetch("http:\/\/localhost:8080", body)
