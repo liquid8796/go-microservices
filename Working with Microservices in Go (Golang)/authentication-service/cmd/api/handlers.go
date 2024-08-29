@@ -7,7 +7,6 @@ import (
 )
 
 func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(">>>>>>> Authenticating")
 	var requestPayload struct {
 		Email    string `json:"email"`
 		Password string `json:"password"`
@@ -18,8 +17,6 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 		app.errorJSON(w, err, http.StatusBadRequest)
 		return
 	}
-
-	fmt.Printf(">>>>>>> Payload: %s", requestPayload.Email)
 
 	// validate the user against the database
 	user, err := app.Models.User.GetByEmail(requestPayload.Email)
