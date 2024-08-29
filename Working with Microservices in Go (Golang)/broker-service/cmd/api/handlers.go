@@ -37,6 +37,6 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 	case "auth":
 
 	default:
-		app.errorJSON(w, errors.New(""))
+		app.errorJSON(w, errors.New("unknown action"))
 	}
 }
