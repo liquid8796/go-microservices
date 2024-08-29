@@ -2,9 +2,10 @@ package app
 
 import (
 	"banking/domain"
-	"banking/errs"
 	"net/http"
 	"strings"
+
+	"github.com/liquid8796/banking-lib/errs"
 
 	"github.com/gorilla/mux"
 )

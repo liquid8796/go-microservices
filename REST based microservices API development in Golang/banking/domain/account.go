@@ -2,7 +2,8 @@ package domain
 
 import (
 	"banking/dto"
-	"banking/errs"
+
+	"github.com/liquid8796/banking-lib/errs"
 )
 
 const dbTSLayout = "2006-01-02 15:04:05"
@@ -16,10 +17,11 @@ type Account struct {
 	Status      string  `db:"status"`
 }
 
-func (a Account) ToNewAccountResponseDto() dto.NewAccountResponse {
-	return dto.NewAccountResponse{a.AccountId}
+func (a Account) ToNewAccountResponseDto() *dto.NewAccountResponse {
+	return &dto.NewAccountResponse{a.AccountId}
 }
 
+//go:generate mockgen -destination=../mocks/domain/mockAccountRepository.go -package=domain banking/domain AccountRepository
 type AccountRepository interface {
 	Save(Account) (*Account, *errs.AppError)
 	SaveTransaction(transaction Transaction) (*Transaction, *errs.AppError)

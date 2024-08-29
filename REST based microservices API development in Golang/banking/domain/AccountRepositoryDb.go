@@ -1,10 +1,11 @@
 package domain
 
 import (
-	"banking/errs"
-	"banking/logger"
 	"fmt"
 	"strconv"
+
+	"github.com/liquid8796/banking-lib/errs"
+	"github.com/liquid8796/banking-lib/logger"
 
 	"github.com/jmoiron/sqlx"
 )

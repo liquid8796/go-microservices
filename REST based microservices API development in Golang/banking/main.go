@@ -2,7 +2,8 @@ package main
 
 import (
 	"banking/app"
-	"banking/logger"
+
+	"github.com/liquid8796/banking-lib/logger"
 )
 
 func main() {

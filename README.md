@@ -1,2 +1,2 @@
 # go-microservices
-All basics about microservices in Golang
+All courses about microservices using Golang in Udemy

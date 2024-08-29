@@ -2,7 +2,8 @@ package domain
 
 import (
 	"banking/dto"
-	"banking/errs"
+
+	"github.com/liquid8796/banking-lib/errs"
 )
 
 type Customer struct {

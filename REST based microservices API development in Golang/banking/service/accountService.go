@@ -3,8 +3,9 @@ package service
 import (
 	"banking/domain"
 	"banking/dto"
-	"banking/errs"
 	"time"
+
+	"github.com/liquid8796/banking-lib/errs"
 )
 
 const dbTSLayout = "2006-01-02 15:04:05"
@@ -19,26 +20,17 @@ type DefaultAccountService struct {
 }
 
 func (s DefaultAccountService) NewAccount(req dto.NewAccountRequest) (*dto.NewAccountResponse, *errs.AppError) {
-	err := req.Validate()
-	if err != nil {
-		return nil, err
-	}
-	a := domain.Account{
-		AccountId:   "",
-		CustomerId:  req.CustomerId,
-		OpeningDate: time.Now().Format("2006-01-02 15:04:05"),
-		AccountType: req.AccountType,
-		Amount:      req.Amount,
-		Status:      "1",
-	}
-	newAccount, err := s.repo.Save(a)
-	if err != nil {
+	if err := req.Validate(); err != nil {
 		return nil, err
 	}
 
-	response := newAccount.ToNewAccountResponseDto()
+	account := domain.NewAccount(req.CustomerId, req.AccountType, req.Amount)
 
-	return &response, nil
+	if newAccount, err := s.repo.Save(account); err != nil {
+		return nil, err
+	} else {
+		return newAccount.ToNewAccountResponseDto(), nil
+	}
 }
 
 func (s DefaultAccountService) MakeTransaction(req dto.TransactionRequest) (*dto.TransactionResponse, *errs.AppError) {

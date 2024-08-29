@@ -1,11 +1,12 @@
 package domain
 
 import (
-	"banking/logger"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/url"
+
+	"github.com/liquid8796/banking-lib/logger"
 )
 
 type AuthRepository interface {

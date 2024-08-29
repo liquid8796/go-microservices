@@ -1,8 +1,9 @@
 package dto
 
 import (
-	"banking/errs"
 	"strings"
+
+	"github.com/liquid8796/banking-lib/errs"
 )
 
 type NewAccountRequest struct {

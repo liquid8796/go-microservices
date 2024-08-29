@@ -2,11 +2,12 @@ package app
 
 import (
 	"banking/domain"
-	"banking/errs"
 	"banking/mocks/service"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/liquid8796/banking-lib/errs"
 
 	"github.com/golang/mock/gomock"
 	"github.com/gorilla/mux"
