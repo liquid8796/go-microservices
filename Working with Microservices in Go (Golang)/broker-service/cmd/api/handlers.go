@@ -76,5 +76,16 @@ func (app *Config) authenticate(w http.ResponseWriter, a AuthPayload) {
 
 	// decode the json from the auth service
 	err = json.NewDecoder(response.Body).Decode(jsonFromService)
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
 
+	if jsonFromService.Error {
+		app.errorJSON(w, err, http.StatusUnauthorized)
+	}
+
+	var payload jsonResponse
+	payload.Error = false
+	payload.Message = "Authenticated!"
 }
