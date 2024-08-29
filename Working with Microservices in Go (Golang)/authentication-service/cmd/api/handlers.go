@@ -4,11 +4,11 @@ import (
 	"net/http"
 )
 
-func (app *Config) Broker(w http.ResponseWriter, r *http.Request) {
-	payload := jsonResponse{
-		Error:   false,
-		Message: "Hit the broker",
+func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
+	var requestPayload struct {
+		Email    string `json:"email"`
+		Password string `json:"password"`
 	}
 
-	_ = app.writeJSON(w, http.StatusOK, payload)
+	_ = app.readJSON(w, r, &requestPayload)
 }
