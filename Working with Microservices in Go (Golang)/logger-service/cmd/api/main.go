@@ -22,7 +22,11 @@ type Config struct {
 
 func main() {
 	// connect to mongo
-
+	mongoClient, err := connectToMongo()
+	if err != nil {
+		log.Panic(err)
+	}
+	client = mongoClient
 }
 
 func connectToMongo() (*mongo.Client, error) {
