@@ -1,6 +1,9 @@
 package main
 
-import "go.mongodb.org/mongo-driver/mongo"
+import (
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
+)
 
 const (
 	webPort  = "80"
@@ -11,6 +14,14 @@ const (
 
 var client *mongo.Client
 
-func main() {
+type Config struct {
+}
 
+func main() {
+	// connect to mongo
+	clientOptions := options.Client().ApplyURI(mongoURL)
+	clientOptions.SetAuth(options.Credential{
+		Username: "admin",
+		Password: "password",
+	})
 }
