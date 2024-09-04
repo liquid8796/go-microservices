@@ -58,7 +58,7 @@ func (app *Config) serve() {
 		Handler: app.routes(),
 	}
 
-	fmt.Printf("Connect to server: ", srv)
+	fmt.Printf("Connect to server: ", srv.Addr)
 
 	err := srv.ListenAndServe()
 	if err != nil {
