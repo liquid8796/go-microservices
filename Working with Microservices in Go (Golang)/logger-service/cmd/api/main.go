@@ -58,6 +58,8 @@ func (app *Config) serve() {
 		Handler: app.routes(),
 	}
 
+	fmt.Printf("Connect to server: ", srv)
+
 	err := srv.ListenAndServe()
 	if err != nil {
 		log.Panic()
