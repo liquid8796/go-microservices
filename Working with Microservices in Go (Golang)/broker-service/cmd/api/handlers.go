@@ -73,6 +73,10 @@ func (app *Config) logItem(w http.ResponseWriter, entry LogPayload) {
 	}
 	defer response.Body.Close()
 
+	if response.StatusCode != http.StatusAccepted {
+		app.errorJSON(w, err)
+		return
+	}
 }
 
 func (app *Config) authenticate(w http.ResponseWriter, a AuthPayload) {
