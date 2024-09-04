@@ -49,6 +49,17 @@
                 data: "Some kind of data",
             }
         }
+    }
+
+    authBrokerBtn.addEventListener("click", function() {
+
+        const payload = {
+            action: "auth",
+            auth: {
+                email: "admin@example.com",
+                password: "verysecret",
+            }
+        }
 
         const headers = new Headers();
         headers.append("Content-Type", "application/json");
@@ -73,7 +84,8 @@
         .catch((error) => {
             output.innerHTML += `<br><strong>Response from broker service</strong>: ${data.message}`;
         })
-    }
+    });
+    
 
     authBrokerBtn.addEventListener("click", function() {
 
