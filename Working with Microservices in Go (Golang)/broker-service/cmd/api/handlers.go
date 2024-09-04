@@ -44,9 +44,25 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 	switch requestPayload.Action {
 	case "auth":
 		app.authenticate(w, requestPayload.Auth)
+	case "log":
+		app.logItem(w, requestPayload.Log)
 	default:
 		app.errorJSON(w, errors.New("unknown action"))
 	}
+}
+
+func (app *Config) logItem(w http.ResponseWriter, entry LogPayload) {
+	jsonData, _ := json.MarshalIndent(entry, "", "\t")
+
+	logServiceURL := "http://logger-service/log"
+
+	request, err := http.NewRequest("POST", logServiceURL, bytes.NewBuffer(jsonData))
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	request.Header.Set("Content-Type", "application/json")
 }
 
 func (app *Config) authenticate(w http.ResponseWriter, a AuthPayload) {
