@@ -18,8 +18,8 @@ type AuthPayload struct {
 }
 
 type LogPayload struct {
-	Name     string `json:"email"`
-	Password string `json:"password"`
+	Name string `json:"email"`
+	Data string `json:"password"`
 }
 
 func (app *Config) Broker(w http.ResponseWriter, r *http.Request) {
