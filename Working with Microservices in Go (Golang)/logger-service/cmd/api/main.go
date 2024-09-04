@@ -49,7 +49,7 @@ func main() {
 	}
 
 	// start web server
-	app.serve()
+	go app.serve()
 }
 
 func (app *Config) serve() {
