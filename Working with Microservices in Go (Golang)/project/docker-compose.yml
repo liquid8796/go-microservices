@@ -16,6 +16,7 @@ services:
     build:
       context: ./../logger-service
       dockerfile: ./../logger-service/logger-service.dockerfile
+    restart: always
 
   authentication-service:
     build:
