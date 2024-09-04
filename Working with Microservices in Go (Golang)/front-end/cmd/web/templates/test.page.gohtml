@@ -42,22 +42,12 @@
     let received = document.getElementById("received");
 
     logBtn.addEventListener("click", function() {
+
         const payload = {
             action: "log",
             log: {
                 name: "event",
                 data: "Some kind of data",
-            }
-        }
-    }
-
-    authBrokerBtn.addEventListener("click", function() {
-
-        const payload = {
-            action: "auth",
-            auth: {
-                email: "admin@example.com",
-                password: "verysecret",
             }
         }
 
