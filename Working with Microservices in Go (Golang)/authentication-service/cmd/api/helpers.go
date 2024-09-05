@@ -47,7 +47,9 @@ func (app *Config) writeJSON(w http.ResponseWriter, status int, data interface{}
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
-	fmt.Println(">>>>>>>>>>>>Authentication 6:", out)
+	var in any
+	json.Unmarshal(out, &in)
+	fmt.Println(">>>>>>>>>>>>Authentication 6:", in)
 	_, err = w.Write(out)
 	if err != nil {
 		return err
