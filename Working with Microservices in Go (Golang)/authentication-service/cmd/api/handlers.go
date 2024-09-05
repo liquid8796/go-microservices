@@ -56,8 +56,7 @@ func (app *Config) logRequest(name, data string) error {
 	entry.Name = name
 	entry.Data = data
 
-	// jsonData, _ := json.MarshalIndent(entry, "", "\t")
-	jsonData, _ := json.Marshal(entry)
+	jsonData, _ := json.MarshalIndent(entry, "", "\t")
 
 	logServiceURL := "http://logger-service/log"
 
