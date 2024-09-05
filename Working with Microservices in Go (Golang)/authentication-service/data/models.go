@@ -211,7 +211,7 @@ func (u *User) Insert(user User) (int, error) {
 	}
 
 	var newID int
-	stmt := `insert into users (email, first_name, last_name, password, user_active, created_at, updated_at)
+	stmt := `insert into public.users (email, first_name, last_name, password, user_active, created_at, updated_at)
 		values ($1, $2, $3, $4, $5, $6, $7) returning id`
 
 	err = db.QueryRowContext(ctx, stmt,
