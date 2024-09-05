@@ -41,6 +41,8 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	fmt.Println(">>>>>>>>>>>Authenticate 4 debug here:", user)
+
 	payload := jsonResponse{
 		Error:   false,
 		Message: fmt.Sprintf("Logged in user %s", user.Email),
