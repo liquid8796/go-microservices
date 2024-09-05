@@ -56,8 +56,6 @@ func (app *Config) logRequest(name, data string) error {
 	entry.Name = name
 	entry.Data = data
 
-	fmt.Println(">>>>>>>>>>>>Authentication 6:", entry)
-
 	// jsonData, _ := json.MarshalIndent(entry, "", "\t")
 	jsonData, _ := json.Marshal(entry)
 
