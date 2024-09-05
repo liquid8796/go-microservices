@@ -2,7 +2,6 @@ package data
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"time"
 
@@ -43,8 +42,6 @@ func (l *LogEntry) Insert(entry LogEntry) error {
 		CreatedAt: entry.CreatedAt,
 		UpdatedAt: entry.UpdatedAt,
 	})
-
-	fmt.Println(">>>>>>>>>>> Log debug")
 
 	if err != nil {
 		log.Println("Error inserting into logs", err)
