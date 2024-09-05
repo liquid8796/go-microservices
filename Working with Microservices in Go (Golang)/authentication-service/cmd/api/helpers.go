@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io"
 	"net/http"
 )
@@ -49,7 +48,6 @@ func (app *Config) writeJSON(w http.ResponseWriter, status int, data interface{}
 	w.WriteHeader(status)
 	_, err = w.Write(out)
 	if err != nil {
-		fmt.Println(">>>>>>>>>>>>Authentication 6:", err)
 		return err
 	}
 
