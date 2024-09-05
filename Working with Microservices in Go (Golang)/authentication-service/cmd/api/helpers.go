@@ -36,7 +36,7 @@ func (app *Config) readJSON(w http.ResponseWriter, r *http.Request, data any) er
 func (app *Config) writeJSON(w http.ResponseWriter, status int, data interface{}, headers ...http.Header) error {
 
 	out, err := json.Marshal(data)
-	fmt.Println(">>>>>>>>>Authentication 5 erroor:", err.Error())
+	fmt.Println(">>>>>>>>>Authentication 5 erroor:", err != nil)
 	if err != nil {
 		return err
 	}
