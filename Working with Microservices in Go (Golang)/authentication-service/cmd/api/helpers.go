@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"net/http"
 )
@@ -37,6 +38,8 @@ func (app *Config) writeJSON(w http.ResponseWriter, status int, data any, header
 	if err != nil {
 		return err
 	}
+
+	fmt.Println(">>>>>>>>>>>Authenticate 3 debug here:")
 
 	if len(headers) > 0 {
 		for key, value := range headers[0] {
