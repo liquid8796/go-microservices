@@ -52,7 +52,6 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *Config) logRequest(name, data string) error {
-
 	var entry dto.LogEntry
 	entry.Name = name
 	entry.Data = data
