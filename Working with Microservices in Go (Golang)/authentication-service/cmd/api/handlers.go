@@ -28,12 +28,13 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(">>>>>>>>>>>Authenticate 2 debug here:")
-
+	valid, err := user.PasswordMatches(requestPayload.Password)
 	if err != nil || !valid {
 		app.errorJSON(w, errors.New("invalid credentials"), http.StatusBadRequest)
 		return
 	}
+
+	fmt.Println(">>>>>>>>>>>Authenticate 3 debug here:")
 
 	// log authentication
 	err = app.logRequest("authentication", fmt.Sprintf("%s logged in", user.Email))
