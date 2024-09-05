@@ -53,12 +53,12 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 
 func (app *Config) logRequest(name, data string) error {
 
-	var entry dto.LogEntry{
-		
-	}
+	var entry dto.LogEntry
+	entry.Name = name
+	entry.Data = data
 
 	// jsonData, _ := json.MarshalIndent(entry, "", "\t")
-	jsonData, _ := json.Marshal(data)
+	jsonData, _ := json.Marshal(entry)
 	fmt.Print(">>>>>>>>>>>>Authentication 6:", jsonData)
 	logServiceURL := "http://logger-service/log"
 
