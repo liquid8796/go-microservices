@@ -83,6 +83,7 @@ func (u *User) GetAll() ([]*User, error) {
 }
 
 // GetByEmail returns one user by email
+// GetByEmail returns one user by email
 func (u *User) GetByEmail(email string) (*User, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), dbTimeout)
 	defer cancel()
