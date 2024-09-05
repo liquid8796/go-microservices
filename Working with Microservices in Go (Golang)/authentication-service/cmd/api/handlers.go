@@ -28,7 +28,7 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(">>>>>>>>>>>Authenticate 2 debug here:", err.Error())
+	fmt.Println(">>>>>>>>>>>Authenticate 2 debug here:")
 
 	valid, err := user.PasswordMatches(requestPayload.Password)
 	if err != nil || !valid {
