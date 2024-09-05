@@ -1,6 +1,7 @@
 package main
 
 import (
+	"authentication/dto"
 	"bytes"
 	"encoding/json"
 	"errors"
@@ -51,6 +52,10 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *Config) logRequest(name, data string) error {
+
+	var entry dto.LogEntry{
+		
+	}
 
 	// jsonData, _ := json.MarshalIndent(entry, "", "\t")
 	jsonData, _ := json.Marshal(data)
