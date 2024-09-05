@@ -37,7 +37,6 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 	// log authentication
 	err = app.logRequest("authentication", fmt.Sprintf("%s logged in", user.Email))
 	if err != nil {
-		fmt.Print(">>>>>>>>>>>>Authentication 6")
 		app.errorJSON(w, err)
 		return
 	}
