@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io"
 	"net/http"
 )
@@ -34,8 +33,6 @@ func (app *Config) readJSON(w http.ResponseWriter, r *http.Request, data any) er
 }
 
 func (app *Config) writeJSON(w http.ResponseWriter, status int, data any, headers ...http.Header) error {
-	fmt.Println(">>>>>>>>>>>Authenticate 4 debug here:", data)
-
 	out, err := json.Marshal(data)
 	if err != nil {
 		return err
