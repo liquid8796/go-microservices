@@ -20,14 +20,14 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println(">>>>>>>>>>>Authenticate debug here:")
-
 	// validate the user against the database
 	user, err := app.Models.User.GetByEmail(requestPayload.Email)
 	if err != nil {
 		app.errorJSON(w, errors.New("invalid credentials"), http.StatusBadRequest)
 		return
 	}
+
+	fmt.Println(">>>>>>>>>>>Authenticate debug here:")
 
 	valid, err := user.PasswordMatches(requestPayload.Password)
 	if err != nil || !valid {
