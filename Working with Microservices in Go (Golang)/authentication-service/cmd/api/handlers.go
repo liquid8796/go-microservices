@@ -24,10 +24,10 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 	user, err := app.Models.User.GetByEmail(requestPayload.Email)
 	if err != nil {
 		app.errorJSON(w, errors.New("invalid credentials"), http.StatusBadRequest)
+
+		fmt.Println(">>>>>>>>>>>Authenticate debug here:")
 		return
 	}
-
-	fmt.Println(">>>>>>>>>>>Authenticate debug here:")
 
 	valid, err := user.PasswordMatches(requestPayload.Password)
 	if err != nil || !valid {
