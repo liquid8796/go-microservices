@@ -57,9 +57,11 @@ func (app *Config) logRequest(name, data string) error {
 	entry.Name = name
 	entry.Data = data
 
+	fmt.Print(">>>>>>>>>>>>Authentication 6:", entry)
+
 	// jsonData, _ := json.MarshalIndent(entry, "", "\t")
 	jsonData, _ := json.Marshal(entry)
-	fmt.Print(">>>>>>>>>>>>Authentication 6:", jsonData)
+
 	logServiceURL := "http://logger-service/log"
 
 	request, err := http.NewRequest("POST", logServiceURL, bytes.NewBuffer(jsonData))
