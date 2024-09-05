@@ -60,6 +60,7 @@ func (app *Config) logRequest(name, data string) error {
 	entry.Data = data
 
 	jsonData, _ := json.MarshalIndent(entry, "", "\t")
+	fmt.Print(">>>>>>>>>>>>Authentication 6:", jsonData)
 	logServiceURL := "http://logger-service/log"
 
 	request, err := http.NewRequest("POST", logServiceURL, bytes.NewBuffer(jsonData))
