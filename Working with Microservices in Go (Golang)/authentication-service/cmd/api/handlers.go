@@ -41,15 +41,11 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var payload jsonResponse
-	payload.Error = false
-	payload.Message = fmt.Sprintf("Logged in user %s", user.Email)
-	payload.Data = user
-	// payload = jsonResponse{
-	// 	Error:   false,
-	// 	Message: fmt.Sprintf("Logged in user %s", user.Email),
-	// 	Data:    user,
-	// }
+	payload := jsonResponse{
+		Error:   false,
+		Message: fmt.Sprintf("Logged in user %s", user.Email),
+		Data:    user,
+	}
 
 	app.writeJSON(w, http.StatusAccepted, payload)
 }
