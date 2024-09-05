@@ -51,13 +51,6 @@ func (app *Config) Authenticate(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *Config) logRequest(name, data string) error {
-	var entry struct {
-		Name string `json:"name"`
-		Data string `json:"data"`
-	}
-
-	entry.Name = name
-	entry.Data = data
 
 	// jsonData, _ := json.MarshalIndent(entry, "", "\t")
 	jsonData, _ := json.Marshal(data)
