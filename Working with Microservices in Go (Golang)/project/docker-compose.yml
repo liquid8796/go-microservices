@@ -21,6 +21,15 @@ services:
       mode: always
       replicas: 1
 
+  mailer-service:
+    build:
+      context: ./../logger-service
+      dockerfile: ./../logger-service/logger-service.dockerfile
+    restart: always
+    deploy:
+      mode: always
+      replicas: 1
+
   authentication-service:
     build:
       context: ./../authentication-service
