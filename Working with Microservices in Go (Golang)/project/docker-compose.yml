@@ -36,7 +36,7 @@ services:
       MAIL_ENCRYPTION: none
       MAIL_USERNAME: ""
       MAIL_PASSWORD: ""
-      FROM_NAME: "John Smith"
+      FROM_NAME: "Nam Tran"
       FROM_ADDRESS: nam@example.com
 
   authentication-service:
