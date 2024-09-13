@@ -18,7 +18,7 @@ services:
       dockerfile: ./../logger-service/logger-service.dockerfile
     restart: always
     deploy:
-      mode: always
+      mode: replicated
       replicas: 1
 
   mailer-service:
@@ -27,7 +27,7 @@ services:
       dockerfile: ./../mail-service/mail-service.dockerfile
     restart: always
     deploy:
-      mode: always
+      mode: replicated
       replicas: 1
 
   authentication-service:
