@@ -23,8 +23,8 @@ services:
 
   mailer-service:
     build:
-      context: ./../logger-service
-      dockerfile: ./../logger-service/logger-service.dockerfile
+      context: ./../mail-service
+      dockerfile: ./../mail-service/mail-service.dockerfile
     restart: always
     deploy:
       mode: always
