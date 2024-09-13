@@ -14,8 +14,10 @@ type RequestPayload struct {
 }
 
 type MailPayload struct {
-	From string `json:"from"`
-	To   string `json:"to"`
+	From    string `json:"from"`
+	To      string `json:"to"`
+	Subject string `json:"subject"`
+	To      string `json:"to"`
 }
 
 type AuthPayload struct {
