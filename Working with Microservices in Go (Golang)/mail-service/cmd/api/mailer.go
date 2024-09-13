@@ -10,3 +10,13 @@ type Mail struct {
 	FromAddress string
 	FromName    string
 }
+
+type Message struct {
+	From        string
+	FromName    string
+	To          string
+	Subject     string
+	Attachments []string
+	Data        any
+	DataMap     map[string]any
+}
