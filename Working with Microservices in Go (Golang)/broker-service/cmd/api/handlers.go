@@ -173,4 +173,11 @@ func (app *Config) sendMail(w http.ResponseWriter, msg MailPayload) {
 		app.errorJSON(w, errors.New("error calling mail service"))
 		return
 	}
+
+	// send back json
+	var payload jsonResponse
+	payload.Error = false
+	payload.Message = "Message sent to " + msg.To
+
+	app.writeJSON(w, http.StatusAccepted, payload)
 }
