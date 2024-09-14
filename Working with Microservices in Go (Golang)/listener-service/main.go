@@ -18,7 +18,7 @@ func main() {
 		os.Exit(1)
 	}
 	defer rabbitConn.Close()
-	fmt.Println(rabbitConn.Config.TLSClientConfig.GetCertificate())
+	fmt.Println(rabbitConn.Config.TLSClientConfig.GetCertificate)
 
 	// start listening for messages
 
