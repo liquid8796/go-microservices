@@ -86,3 +86,5 @@ services:
 
   rabbitmq:
     image: 'rabbitmq:3.13.7-alpine'
+    ports:
+      - "5672:5672"
