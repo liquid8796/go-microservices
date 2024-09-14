@@ -91,7 +91,7 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-    volume:
+    volumes:
       - ./db-data/rabbitmq/:/var/lib/rabbitmq/
 
     
