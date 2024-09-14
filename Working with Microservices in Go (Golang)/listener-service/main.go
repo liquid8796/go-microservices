@@ -1,5 +1,9 @@
 package main
 
+import (
+	_ "github.com/rabbitmq/amqp091-go"
+)
+
 func main() {
 	// try to connect to rabbitmq
 
