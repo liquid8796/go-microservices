@@ -31,6 +31,9 @@ func main() {
 
 	// watch the queue and consume events
 	err = consumer.Listen([]string{"log.INFO", "log.WARNING", "log.ERROR"})
+	if err != nil {
+		log.Println(err)
+	}
 }
 
 func connect() (*amqp.Connection, error) {
