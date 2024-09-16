@@ -21,6 +21,7 @@ func (app *Config) WriteLog(w http.ResponseWriter, r *http.Request) {
 		Name:      requestPayload.Name,
 		Data:      requestPayload.Data,
 		CreatedAt: time.Now(),
+		UpdatedAt: time.Now(),
 	}
 
 	err := app.Models.LogEntry.Insert(event)
