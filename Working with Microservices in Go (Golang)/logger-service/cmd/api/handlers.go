@@ -3,6 +3,7 @@ package main
 import (
 	"log-service/data"
 	"net/http"
+	"time"
 )
 
 type JSONPayload struct {
@@ -17,8 +18,9 @@ func (app *Config) WriteLog(w http.ResponseWriter, r *http.Request) {
 
 	// insert data
 	event := data.LogEntry{
-		Name: requestPayload.Name,
-		Data: requestPayload.Data,
+		Name:      requestPayload.Name,
+		Data:      requestPayload.Data,
+		CreatedAt: time.Now(),
 	}
 
 	err := app.Models.LogEntry.Insert(event)
