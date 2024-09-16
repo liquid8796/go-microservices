@@ -31,7 +31,7 @@ func (e *Emitter) Push(event string, severity string) error {
 	log.Println("Pushing to channel")
 
 	err = channel.Publish(
-		"log_topic",
+		"logS_topic",
 		severity,
 		false,
 		false,
