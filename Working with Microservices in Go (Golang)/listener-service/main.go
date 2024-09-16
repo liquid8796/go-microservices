@@ -18,7 +18,6 @@ func main() {
 		os.Exit(1)
 	}
 	defer rabbitConn.Close()
-	fmt.Println("connected!")
 
 	// start listening for messages
 
