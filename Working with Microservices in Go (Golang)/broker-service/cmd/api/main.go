@@ -5,6 +5,7 @@ import (
 	"log"
 	"math"
 	"net/http"
+	"os"
 	"time"
 
 	amqp "github.com/rabbitmq/amqp091-go"
@@ -17,7 +18,17 @@ type Config struct {
 }
 
 func main() {
-	app := Config{}
+	// try to connect to rabbitmq
+	rabbitConn, err := connect()
+	if err != nil {
+		log.Println(err)
+		os.Exit(1)
+	}
+	defer rabbitConn.Close()
+
+	app := Config{
+		Rabbit: rabbitConn,
+	}
 
 	log.Printf("Starting broker service on port %s\n", webPort)
 
@@ -28,7 +39,7 @@ func main() {
 	}
 
 	// start the server
-	err := srv.ListenAndServe()
+	err = srv.ListenAndServe()
 	if err != nil {
 		log.Panic(err)
 	}
