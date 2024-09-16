@@ -8,3 +8,13 @@ import (
 type Emitter struct {
 	connection *amqp.Connection
 }
+
+func (e *Emitter) setup() error {
+	channel, err := e.connection.Channel()
+	if err != nil {
+		return err
+	}
+
+	defer channel.Close()
+	return declareExchange(channel)
+}
