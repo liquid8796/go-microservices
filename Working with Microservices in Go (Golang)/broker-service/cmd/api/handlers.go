@@ -189,6 +189,12 @@ func (app *Config) logEventViaRabbit(w http.ResponseWriter, l LogPayload) {
 		app.errorJSON(w, err)
 		return
 	}
+
+	var payload jsonResponse
+	payload.Error = false
+	payload.Message = "logged via RabbitMQ"
+
+	app.writeJSON(w, http.StatusAccepted, payload)
 }
 
 func (app *Config) pushToQueue(name, msg string) error {
