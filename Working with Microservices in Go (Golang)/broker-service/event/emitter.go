@@ -56,4 +56,6 @@ func NewEventEmitter(conn *amqp.Connection) (Emitter, error) {
 	if err != nil {
 		return Emitter{}, err
 	}
+
+	return emitter, nil
 }
