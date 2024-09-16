@@ -56,8 +56,8 @@ services:
   
   listener-service:
     build:
-      context: ./../authentication-service
-      dockerfile: ./../authentication-service/authentication-service.dockerfile
+      context: ./../listener-service
+      dockerfile: ./../listener-service/listener-service.dockerfile
     restart: always
     ports:
       - "8081:80"
