@@ -20,6 +20,7 @@ func main() {
 	defer rabbitConn.Close()
 
 	// start listening for messages
+	log.Println("Listening for and consuming RabbitMQ messages...")
 
 	// create consumer
 
