@@ -58,14 +58,9 @@ services:
     build:
       context: ./../listener-service
       dockerfile: ./../listener-service/listener-service.dockerfile
-    restart: always
-    ports:
-      - "8081:80"
     deploy:
       mode: replicated
       replicas: 1
-    environment:
-      DSN: "host=postgres port=5432 user=postgres password=password search_path=public sslmode=disable timezone=UTC connect_timeout=5"
 
   postgres:
     image: 'postgres'
