@@ -217,3 +217,7 @@ func (app *Config) pushToQueue(name, msg string) error {
 
 	return nil
 }
+
+func (app *Config) logItemViaRPC(w http.ResponseWriter, l LogPayload) {
+
+}
