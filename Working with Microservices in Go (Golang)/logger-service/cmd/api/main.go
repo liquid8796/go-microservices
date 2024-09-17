@@ -66,6 +66,10 @@ func (app *Config) serve() {
 	}
 }
 
+func (app *Config) rpcListten() {
+
+}
+
 func connectToMongo() (*mongo.Client, error) {
 	// create connection options
 	clientOptions := options.Client().ApplyURI(mongoURL)
