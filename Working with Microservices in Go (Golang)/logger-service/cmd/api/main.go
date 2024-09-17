@@ -67,7 +67,7 @@ func (app *Config) serve() {
 }
 
 func (app *Config) rpcListten() {
-
+	log.Println("Starting RPC server on port ", rpcPort)
 }
 
 func connectToMongo() (*mongo.Client, error) {
