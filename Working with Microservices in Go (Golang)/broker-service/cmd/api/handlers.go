@@ -243,4 +243,10 @@ func (app *Config) logItemViaRPC(w http.ResponseWriter, l LogPayload) {
 		return
 	}
 
+	payload := jsonResponse{
+		Error:   false,
+		Message: result,
+	}
+
+	app.writeJSON(w, http.StatusAccepted, payload)
 }
