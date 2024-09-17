@@ -50,6 +50,8 @@ func main() {
 		Models: data.New(client),
 	}
 
+	go app.rpcListten()
+
 	// start web server
 	app.serve()
 }
