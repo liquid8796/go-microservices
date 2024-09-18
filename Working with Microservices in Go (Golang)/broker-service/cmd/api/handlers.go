@@ -251,3 +251,12 @@ func (app *Config) logItemViaRPC(w http.ResponseWriter, l LogPayload) {
 
 	app.writeJSON(w, http.StatusAccepted, payload)
 }
+
+func (app *Config) LogViaGRPC(w http.ResponseWriter, r *http.Request) {
+	var requestPayload RequestPayload
+
+	err := app.readJSON(w, r, &requestPayload)
+	if err != nil {
+		app.errorJSON(w, err)
+	}
+}
