@@ -49,6 +49,6 @@ func (app *Config) gRPCListen() {
 	log.Println("gRPC Server started on port %s", gRpcPort)
 
 	if err := s.Serve(lis); err != nil {
-
+		log.Fatal("Failed to listen for gRPC: %w", err)
 	}
 }
