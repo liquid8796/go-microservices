@@ -6,14 +6,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mailhog
+      app: mailer-service
   template:
     metadata:
       labels:
-        app: mailhog
+        app: mailer-service
     spec:
       containers:
-      - name: mailhog
+      - name: mailer-service
         image: "mailhog/mailhog:latest"
         resources:
           requests:
@@ -31,10 +31,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mailhog
+  name: mailer-service
 spec:
   selector:
-    app: mailhog
+    app: mailer-service
   ports:
     - protocol: TCP
       name: smtp-port
