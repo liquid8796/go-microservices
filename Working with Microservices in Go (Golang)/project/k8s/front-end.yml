@@ -6,14 +6,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: broker-service
+      app: front-end
   template:
     metadata:
       labels:
-        app: broker-service
+        app: front-end
     spec:
       containers:
-      - name: broker-service
+      - name: front-end
         image: "liquid8796/broker-service"
         resources:
           requests:
