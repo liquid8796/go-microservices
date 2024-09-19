@@ -41,3 +41,11 @@ spec:
       name: web-port
       port: 80
       targetPort: 80
+    - protocol: TCP
+      name: rpc-port
+      port: 80
+      targetPort: 80
+    - protocol: TCP
+      name: web-port
+      port: 80
+      targetPort: 80
