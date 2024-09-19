@@ -33,7 +33,7 @@ spec:
             value: "none"
           - name: MAIL_USERNAME
             value: ""
-          - name: MAIL_USERNAME
+          - name: MAIL_PASSWORD
             value: ""
         ports:
           - containerPort: 1025
