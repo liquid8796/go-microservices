@@ -32,7 +32,9 @@ spec:
           - name: MAIL_ENCRYPTION
             value: "none"
           - name: MAIL_USERNAME
-            value: "1025"
+            value: ""
+          - name: MAIL_USERNAME
+            value: ""
         ports:
           - containerPort: 1025
           - containerPort: 8025
