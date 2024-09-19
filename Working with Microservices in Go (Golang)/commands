@@ -9,4 +9,7 @@ docker image prune -f
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative logs.proto
 
 ### k8s
+kubectl delete svc --all
+
 kubectl expose deployment mailhog --type=LoadBalancer --name=mailhog
+
