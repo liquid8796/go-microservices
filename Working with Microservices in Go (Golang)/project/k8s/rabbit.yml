@@ -23,12 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo
+  name: rabbitmq
 spec:
   selector:
-    name: mongo
+    name: rabbitmq
   ports:
     - protocol: TCP
       name: main-port
-      port: 27017
-      targetPort: 27017
+      port: 5672
+      targetPort: 5672
