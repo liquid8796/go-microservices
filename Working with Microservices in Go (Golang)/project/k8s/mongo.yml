@@ -4,3 +4,6 @@ metadata:
   name: mongo
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
