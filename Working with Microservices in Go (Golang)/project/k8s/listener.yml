@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: logger-service
+      app: listener-service
   template:
     metadata:
       labels:
-        app: logger-service
+        app: listener-service
     spec:
       containers:
-      - name: logger-service
-        image: "liquid8796/logger-service"
+      - name: listener-service
+        image: "liquid8796/listener-service"
         resources:
           requests:
             memory: "64Mi"
@@ -32,10 +32,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: logger-service
+  name: listener-service
 spec:
   selector:
-    app: logger-service
+    app: listener-service
   ports:
     - protocol: TCP
       name: web-port
