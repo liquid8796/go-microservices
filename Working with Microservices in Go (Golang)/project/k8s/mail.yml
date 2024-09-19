@@ -36,7 +36,7 @@ spec:
           - name: MAIL_PASSWORD
             value: ""
           - name: FROM_NAME
-            value: ""
+            value: "Nam Tran"
           - name: MAIL_PASSWORD
             value: ""
         ports:
