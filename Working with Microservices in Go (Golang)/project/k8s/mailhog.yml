@@ -24,7 +24,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 1025
-          - containerPort: 8025
+          - containerPort: 8026
 
 ---
 
@@ -42,5 +42,5 @@ spec:
       targetPort: 1025
     - protocol: TCP
       name: smtp-port
-      port: 8025
+      port: 8026
       targetPort: 8025
