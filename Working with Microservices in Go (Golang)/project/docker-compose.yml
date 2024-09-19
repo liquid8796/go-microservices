@@ -105,7 +105,7 @@ services:
   front-end:
     build:
       context: ./../front-end
-      dockerfile: ./../authentication-service/authentication-service.dockerfile
+      dockerfile: ./../front-end/front-end.dockerfile
     restart: always
     ports:
       - "8081:80"
