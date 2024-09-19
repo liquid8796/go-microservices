@@ -53,10 +53,6 @@ spec:
     app: mailer-service
   ports:
     - protocol: TCP
-      name: smtp-port
-      port: 1025
-      targetPort: 1025
-    - protocol: TCP
-      name: web-port
-      port: 8025
-      targetPort: 8025
+      name: main-port
+      port: 80
+      targetPort: 80
