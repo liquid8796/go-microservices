@@ -37,6 +37,6 @@ spec:
     app: mailhog
   ports:
     - protocol: TCP
-      name: main-port
+      name: smtp-port
       port: 5672
       targetPort: 5672
