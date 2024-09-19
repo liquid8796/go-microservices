@@ -37,7 +37,7 @@ spec:
             value: ""
           - name: FROM_NAME
             value: "Nam Tran"
-          - name: MAIL_PASSWORD
+          - name: FROM_ADDRESS
             value: ""
         ports:
           - containerPort: 1025
