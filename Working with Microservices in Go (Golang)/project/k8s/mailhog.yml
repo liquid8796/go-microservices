@@ -41,6 +41,6 @@ spec:
       port: 1025
       targetPort: 1025
     - protocol: TCP
-      name: smtp-port
+      name: web-port
       port: 8026
       targetPort: 8026
