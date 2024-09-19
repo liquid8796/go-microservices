@@ -42,5 +42,5 @@ spec:
       targetPort: 1025
     - protocol: TCP
       name: web-port
-      port: 8025
-      targetPort: 8026
+      port: 8026
+      targetPort: 8025
