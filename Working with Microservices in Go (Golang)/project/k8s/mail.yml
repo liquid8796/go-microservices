@@ -22,6 +22,13 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        env:
+          - name: MONGO_INITDB_DATABASE
+            value: "logs"
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: "admin"
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: "password"
         ports:
           - containerPort: 1025
           - containerPort: 8025
