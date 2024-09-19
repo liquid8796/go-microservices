@@ -28,7 +28,7 @@ spec:
           - name: MAIL_HOST
             value: "mailhog"
           - name: MAIL_PORT
-            value: "password"
+            value: "1025"
         ports:
           - containerPort: 1025
           - containerPort: 8025
