@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: broker-service
+  name: front-end
 spec:
   replicas: 1
   selector:
