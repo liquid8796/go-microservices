@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rabbitmq
-        image: "rabbitmq"
+        image: "rabbitmq:3.13.7-alpine"
         env:
           - name: MONGO_INITDB_DATABASE
             value: "logs"
