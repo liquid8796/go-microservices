@@ -17,13 +17,13 @@ spec:
         image: "mailhog/mailhog:latest"
         resources:
           requests:
-            memory: "128Mi"
+            memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "512Mi"
+            memory: "128Mi"
             cpu: "500m"
         ports:
-          - containerPort: 5672
+          - containerPort: 1025
 
 ---
 
