@@ -34,7 +34,6 @@ metadata:
 spec:
   selector:
     app: broker-service
-  type: NodePort
   ports:
     - protocol: TCP
       name: main-port
