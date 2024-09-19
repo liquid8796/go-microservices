@@ -26,9 +26,8 @@ spec:
           - name: MAIL_DOMAIN
             value: "localhost"
           - name: MAIL_HOST
-            value: "      MAIL_HOST: mailhog
-"
-          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: "mailhog"
+          - name: MAIL_PORT
             value: "password"
         ports:
           - containerPort: 1025
