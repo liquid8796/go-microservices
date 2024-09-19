@@ -17,3 +17,4 @@ spec:
         image: "mongo:4.2.17-bionic"
         env:
           - name: MONGO_INITDB_DATABASE
+            value: "logs"
