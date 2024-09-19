@@ -38,7 +38,7 @@ spec:
           - name: FROM_NAME
             value: "Nam Tran"
           - name: FROM_ADDRESS
-            value: ""
+            value: "nam@example.com"
         ports:
           - containerPort: 1025
           - containerPort: 8025
