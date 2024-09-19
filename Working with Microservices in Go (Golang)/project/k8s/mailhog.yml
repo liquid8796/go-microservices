@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mailhog
-        image: "rabbitmq:3.9-alpine"
+        image: "mailhog/mailhog:latest"
         resources:
           requests:
             memory: "128Mi"
