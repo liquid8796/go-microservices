@@ -43,4 +43,4 @@ spec:
     - protocol: TCP
       name: smtp-port
       port: 8026
-      targetPort: 8025
+      targetPort: 8026
