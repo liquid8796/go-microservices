@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo
+  name: rabbit
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongo
+      app: rabbit
   template:
     metadata:
       labels:
-        app: mongo
+        app: rabbit
     spec:
       containers:
-      - name: mongo
+      - name: rabbit
         image: "mongo:4.2.17-bionic"
         env:
           - name: MONGO_INITDB_DATABASE
