@@ -35,6 +35,10 @@ spec:
             value: ""
           - name: MAIL_PASSWORD
             value: ""
+          - name: FROM_NAME
+            value: ""
+          - name: MAIL_PASSWORD
+            value: ""
         ports:
           - containerPort: 1025
           - containerPort: 8025
