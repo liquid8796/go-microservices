@@ -23,7 +23,7 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         env:
-          - name: MONGO_INITDB_DATABASE
+          - name: MAIL_DOMAIN
             value: "logs"
           - name: MONGO_INITDB_ROOT_USERNAME
             value: "admin"
