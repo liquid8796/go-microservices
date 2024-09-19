@@ -38,6 +38,6 @@ spec:
     app: logger-service
   ports:
     - protocol: TCP
-      name: main-port
-      port: 27017
-      targetPort: 27017
+      name: web-port
+      port: 80
+      targetPort: 80
