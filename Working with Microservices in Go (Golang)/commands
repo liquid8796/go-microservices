@@ -11,5 +11,5 @@ protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=p
 ### k8s
 kubectl delete all --all --namespace default
 
-kubectl expose deployment mailhog --type=LoadBalancer --name=mailhog
+kubectl expose deployment mailhog --type=LoadBalancer --name=localhost.mailhog
 
