@@ -25,7 +25,7 @@ spec:
         env:
           - name: MAIL_DOMAIN
             value: "localhost"
-          - name: MONGO_INITDB_ROOT_USERNAME
+          - name: MAIL_HOST
             value: "admin"
           - name: MONGO_INITDB_ROOT_PASSWORD
             value: "password"
