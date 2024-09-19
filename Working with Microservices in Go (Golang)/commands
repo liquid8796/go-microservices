@@ -15,4 +15,4 @@ kubectl get pods; kubectl get svc
 
 kubectl delete all --all --namespace default
 
-kubectl expose deployment mailhog --type=LoadBalancer --name=localhost.mailhog
+kubectl expose deployment broker-service --type=LoadBalancer --port=8080 --target-port=80
