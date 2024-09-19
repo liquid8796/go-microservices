@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: broker-service
-        image: "docker.io/library/project-broker-service:latest"
+        image: "docker.io/library/broker-service:latest"
         resources:
           requests:
             memory: "64Mi"
