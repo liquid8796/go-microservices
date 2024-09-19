@@ -24,7 +24,7 @@ spec:
             cpu: "500m"
         env:
           - name: MAIL_DOMAIN
-            value: "logs"
+            value: "localhost"
           - name: MONGO_INITDB_ROOT_USERNAME
             value: "admin"
           - name: MONGO_INITDB_ROOT_PASSWORD
