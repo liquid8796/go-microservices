@@ -35,7 +35,6 @@ metadata:
 spec:
   selector:
     app: mailhog
-  type: NodePort
   ports:
     - protocol: TCP
       name: smtp-port
