@@ -24,7 +24,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 1025
-          - containerPort: 8026
+          - containerPort: 8025
 
 ---
 
@@ -42,5 +42,5 @@ spec:
       targetPort: 1025
     - protocol: TCP
       name: web-port
-      port: 8026
+      port: 8025
       targetPort: 8025
