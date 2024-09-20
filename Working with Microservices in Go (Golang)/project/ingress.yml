@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: front-end.vip
+    - host: front-end.info
       http:
         paths:
           - path: /
