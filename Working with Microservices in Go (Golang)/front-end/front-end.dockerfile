@@ -18,4 +18,6 @@ RUN mkdir /app
 
 COPY --from=builder /app/frontEndApp /app
 
+EXPOSE 8083
+
 CMD [ "/app/frontEndApp" ]
