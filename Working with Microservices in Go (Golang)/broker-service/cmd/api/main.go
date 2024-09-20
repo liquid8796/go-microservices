@@ -62,7 +62,7 @@ func connect() (*amqp.Connection, error) {
 			break
 		}
 
-		if counts > 15 {
+		if counts > 5 {
 			fmt.Println(err)
 			return nil, err
 		}
