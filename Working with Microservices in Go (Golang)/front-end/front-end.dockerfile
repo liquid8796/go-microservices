@@ -4,5 +4,7 @@ RUN mkdir /app
 
 COPY . /app
 
+EXPOSE 8083
+
 # Run the server executable
 CMD [ "/app/cmd/web" ]
