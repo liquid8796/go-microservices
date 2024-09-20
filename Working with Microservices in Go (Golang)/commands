@@ -19,3 +19,6 @@ kubectl apply -f ./ingress.yml
 kubectl delete ingress nam-ingress
 
 kubectl expose deployment broker-service --type=LoadBalancer --port=8080 --target-port=80
+
+minikube start
+minikube stop
