@@ -7,7 +7,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN CGO_ENABLED=0 go build -o brokerApp ./cmd/web
+RUN CGO_ENABLED=0 go build -o frontEndApp ./cmd/web
 
 RUN chmod +x /app/brokerApp
 
