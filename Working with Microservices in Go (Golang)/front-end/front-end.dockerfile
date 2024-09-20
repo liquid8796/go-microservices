@@ -16,6 +16,6 @@ FROM alpine:latest
 
 RUN mkdir /app
 
-COPY --from=builder /app/brokerApp /app
+COPY --from=builder /app/frontEndApp /app
 
-CMD [ "/app/cmd/web" ]
+CMD [ "/app/frontEndApp" ]
