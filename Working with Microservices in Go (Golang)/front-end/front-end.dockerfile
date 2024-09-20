@@ -5,4 +5,4 @@ RUN mkdir /app
 COPY . /app
 
 # Run the server executable
-CMD [ "go run", "/app/cmd/web" ]
+CMD [ "/app/cmd/web" ]
