@@ -4,6 +4,8 @@ RUN mkdir /app
 
 COPY . /app
 
+RUN chmod +x /app/cmd/web
+
 EXPOSE 8083
 
 # Run the server executable
