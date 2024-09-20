@@ -107,8 +107,6 @@ services:
       context: ./../front-end
       dockerfile: ./../front-end/front-end.dockerfile
     restart: always
-    ports:
-      - "8083:8083"
     deploy:
       mode: replicated
       replicas: 1
