@@ -105,7 +105,7 @@ services:
   front-end:
     build:
       context: ./../front-end
-      dockerfile: ./../front-end/logger-service.dockerfile
+      dockerfile: ./../front-end/front-end.dockerfile
     restart: always
     deploy:
       mode: replicated
