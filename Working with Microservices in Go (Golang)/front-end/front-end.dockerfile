@@ -9,7 +9,7 @@ WORKDIR /app
 
 RUN CGO_ENABLED=0 go build -o frontEndApp ./cmd/web
 
-RUN chmod +x /app/brokerApp
+RUN chmod +x /app/frontEndApp
 
 # build a tiny docker image
 FROM alpine:latest
