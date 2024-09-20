@@ -16,6 +16,7 @@ kubectl get pods; kubectl get svc; kubectl get ingress
 kubectl delete all --all --namespace default
 
 kubectl apply -f ./ingress.yml
+minikube tunnel
 kubectl delete ingress nam-ingress
 
 kubectl expose deployment broker-service --type=LoadBalancer --port=8080 --target-port=80
