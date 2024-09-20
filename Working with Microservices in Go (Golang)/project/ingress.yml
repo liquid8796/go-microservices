@@ -17,7 +17,7 @@ spec:
               service:
                 name: front-end
                 port:
-                  number: 8081
+                  number: 8083
     - host: broker-service.info
       http:
         paths:
