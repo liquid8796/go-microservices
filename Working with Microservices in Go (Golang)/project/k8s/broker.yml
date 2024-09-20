@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: broker-service
-        image: "liquid8796/broker-service:1.0.1"
+        image: "liquid8796/broker-service:latest"
         resources:
           requests:
             memory: "64Mi"
