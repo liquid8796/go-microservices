@@ -102,15 +102,15 @@ services:
     volumes:
       - ./db-data/rabbitmq/:/var/lib/rabbitmq/
 
-  rabbitmq:
-    image: 'rabbitmq:3.13.7-alpine'
-    ports:
-      - "5672:5672"
+  front-end:
+    build:
+      context: ./../logger-service
+      dockerfile: ./../logger-service/logger-service.dockerfile
+    restart: always
     deploy:
       mode: replicated
       replicas: 1
-    volumes:
-      - ./db-data/rabbitmq/:/var/lib/rabbitmq/
+  
 
 
 
