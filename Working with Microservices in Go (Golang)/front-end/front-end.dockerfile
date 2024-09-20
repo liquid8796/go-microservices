@@ -9,4 +9,4 @@ RUN chmod +x /app/cmd/web
 EXPOSE 8083
 
 # Run the server executable
-CMD [ "/app/cmd/web" ]
+CMD [ "go run /app/cmd/web" ]
