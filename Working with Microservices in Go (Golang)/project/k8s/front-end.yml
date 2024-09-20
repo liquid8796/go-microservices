@@ -26,7 +26,7 @@ spec:
           - name: BROKER_URL
             value: "http://broker-service.info"
         ports:
-          - containerPort: 8081
+          - containerPort: 8083
 
 ---
 
