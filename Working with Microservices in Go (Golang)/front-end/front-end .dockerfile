@@ -2,7 +2,7 @@ FROM alpine:latest
 
 RUN mkdir /app
 
-COPY --from=builder /app/brokerApp /app
+COPY front-end/frontEndLinux /app
 
-CMD ["/app/brokerApp"]
-
+# Run the server executable
+CMD [ "/app/frontEndLinux" ]
