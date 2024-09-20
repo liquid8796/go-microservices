@@ -28,4 +28,3 @@ spec:
                 name: broker-service
                 port:
                   number: 8080
-
